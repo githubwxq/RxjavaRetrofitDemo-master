@@ -99,7 +99,7 @@ public class ProgressSubscriber<T> extends Subscriber<T> implements ProgressCanc
      */
     @Override
     public void onNext(T t) {
-
+// 默认为空即意味这 其他类不实现接口 级不监听这边类数据的变化
         if (mSubscriberOnNextListener != null) {
             mSubscriberOnNextListener.onNext(t);//给那个类实现借口那个类就能获取另一个类中的东西另一个类中的东西会以参数的形式传到实现借口的类中
         }
