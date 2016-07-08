@@ -9,7 +9,7 @@ public class ApiException extends RuntimeException {
     public static final int WRONG_PASSWORD = 101;
 
     public ApiException(int resultCode) {
-        this(getApiExceptionMessage(resultCode));
+        this(getApiExceptionMessage(resultCode));//code 转下
     }
 
     public ApiException(String detailMessage) {

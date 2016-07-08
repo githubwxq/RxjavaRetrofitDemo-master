@@ -17,6 +17,7 @@ import rx.Subscriber;
  * 调用者自己对请求数据进行处理
  * Created by liukun on 16/3/10.
  * <p/>
+ * 回调解决
  * ！！！！对subscroibe的多功能封装 不再是 填充匿名内部类  处理onnext 等等方法 该如何处理而已 多天了接口
  * <p/>
  * 意味着 在某种状态下他会被实现！！！ 往往实现 是为了处理当类中的某些对象的方法调用解除耦合！！！
@@ -25,7 +26,9 @@ import rx.Subscriber;
  * 还是通过接口回调的方法 传递数据  注册接口实现类方提供数据 实现接口类方拿到数据或响应 从而实现通信
  */
 public class ProgressSubscriber<T> extends Subscriber<T> implements ProgressCancelListener {
-
+    //ProgressCancelListener 此类监听progress progress某个时刻会触发执行
+    //
+    // 继承强化功能  主要关心的
     private SubscriberOnNextListener mSubscriberOnNextListener;
     private ProgressDialogHandler mProgressDialogHandler;
 

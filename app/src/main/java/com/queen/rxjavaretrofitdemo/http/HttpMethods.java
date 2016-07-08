@@ -69,7 +69,7 @@ public class HttpMethods {
 //                .subscribe(subscriber);
 
         Observable observable = movieService.getTopMovie(start, count)
-                .map(new HttpResultFunc<List<Subject>>());// 对网络数据进行处理 异常报错误提吐来
+                .map(new HttpResultFunc<List<Subject>>());// 对网络数据进行处理 异常报错误提吐来此刻已经被过滤了返回值 api
 
         toSubscribe(observable, subscriber);
     }
